@@ -1,2 +1,2 @@
-/.APIMappingLanguageGenerator.java._trace
-/APIMappingLanguageGenerator.java
+*.java._trace
+*.xtendbin

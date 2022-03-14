@@ -1,2 +1,2 @@
-/.APIMappingLanguageProposalProvider.java._trace
-/APIMappingLanguageProposalProvider.java
+*.java._trace
+*.xtendbin
