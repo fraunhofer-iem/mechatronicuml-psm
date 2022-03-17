@@ -60,6 +60,8 @@ public class Muml_containerFactoryImpl extends EFactoryImpl implements Muml_cont
 			case Muml_containerPackage.CONTAINER_COMPONENT_INSTANCE_CONFIGURATION: return createContainerComponentInstanceConfiguration();
 			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_LOCAL: return createPortInstanceConfiguration_Local();
 			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_DDS: return createPortInstanceConfiguration_DDS();
+			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_MQTT: return createPortInstanceConfiguration_MQTT();
+			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_I2C: return createPortInstanceConfiguration_I2C();
 			case Muml_containerPackage.ECU_CONFIGURATION: return createECUConfiguration();
 			case Muml_containerPackage.MULTI_PORT_INSTANCE_CONFIGURATION: return createMultiPortInstanceConfiguration();
 			case Muml_containerPackage.DEPLOYMENT_CONFIGURATION: return createDeploymentConfiguration();
@@ -106,6 +108,26 @@ public class Muml_containerFactoryImpl extends EFactoryImpl implements Muml_cont
 	public PortInstanceConfiguration_DDS createPortInstanceConfiguration_DDS() {
 		PortInstanceConfiguration_DDSImpl portInstanceConfiguration_DDS = new PortInstanceConfiguration_DDSImpl();
 		return portInstanceConfiguration_DDS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortInstanceConfiguration_MQTT createPortInstanceConfiguration_MQTT() {
+		PortInstanceConfiguration_MQTTImpl portInstanceConfiguration_MQTT = new PortInstanceConfiguration_MQTTImpl();
+		return portInstanceConfiguration_MQTT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortInstanceConfiguration_I2C createPortInstanceConfiguration_I2C() {
+		PortInstanceConfiguration_I2CImpl portInstanceConfiguration_I2C = new PortInstanceConfiguration_I2CImpl();
+		return portInstanceConfiguration_I2C;
 	}
 
 	/**

@@ -40,6 +40,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" eType="ecore:EClass ../../org.opendds.modeling.model/model/DCPS.ecore#//Subscriber"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="domainParticipant" eType="ecore:EClass ../../org.opendds.modeling.model/model/DCPS.ecore#//DomainParticipant"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfiguration_MQTT" eSuperTypes="#//PortInstanceConfiguration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfiguration_I2C" eSuperTypes="#//PortInstanceConfiguration"/>
   <eClassifiers xsi:type="ecore:EClass" name="ECUConfiguration" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuredResourceInstance"
         eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>

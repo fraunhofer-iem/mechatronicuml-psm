@@ -91,6 +91,14 @@ public class Muml_containerAdapterFactory extends AdapterFactoryImpl {
 				return createPortInstanceConfiguration_DDSAdapter();
 			}
 			@Override
+			public Adapter casePortInstanceConfiguration_MQTT(PortInstanceConfiguration_MQTT object) {
+				return createPortInstanceConfiguration_MQTTAdapter();
+			}
+			@Override
+			public Adapter casePortInstanceConfiguration_I2C(PortInstanceConfiguration_I2C object) {
+				return createPortInstanceConfiguration_I2CAdapter();
+			}
+			@Override
 			public Adapter caseECUConfiguration(ECUConfiguration object) {
 				return createECUConfigurationAdapter();
 			}
@@ -197,6 +205,34 @@ public class Muml_containerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortInstanceConfiguration_DDSAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT <em>Port Instance Configuration MQTT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT
+	 * @generated
+	 */
+	public Adapter createPortInstanceConfiguration_MQTTAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C <em>Port Instance Configuration I2C</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_I2C
+	 * @generated
+	 */
+	public Adapter createPortInstanceConfiguration_I2CAdapter() {
 		return null;
 	}
 
