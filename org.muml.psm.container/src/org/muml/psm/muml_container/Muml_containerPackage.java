@@ -607,13 +607,31 @@ public interface Muml_containerPackage extends EPackage {
 	int PORT_INSTANCE_CONFIGURATION_I2C__HWPORT_INSTANCE = PORT_INSTANCE_CONFIGURATION__HWPORT_INSTANCE;
 
 	/**
+	 * The feature id for the '<em><b>Own I2c Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Other I2c Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Port Instance Configuration I2C</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_CONFIGURATION_I2C_FEATURE_COUNT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 0;
+	int PORT_INSTANCE_CONFIGURATION_I2C_FEATURE_COUNT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Port Instance Configuration I2C</em>' class.
@@ -1169,6 +1187,28 @@ public interface Muml_containerPackage extends EPackage {
 	EClass getPortInstanceConfiguration_I2C();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOwnI2cAddress <em>Own I2c Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Own I2c Address</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOwnI2cAddress()
+	 * @see #getPortInstanceConfiguration_I2C()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_I2C_OwnI2cAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOtherI2cAddress <em>Other I2c Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Other I2c Address</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOtherI2cAddress()
+	 * @see #getPortInstanceConfiguration_I2C()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_I2C_OtherI2cAddress();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.psm.muml_container.ECUConfiguration <em>ECU Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1465,6 +1505,22 @@ public interface Muml_containerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PORT_INSTANCE_CONFIGURATION_I2C = eINSTANCE.getPortInstanceConfiguration_I2C();
+
+		/**
+		 * The meta object literal for the '<em><b>Own I2c Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS = eINSTANCE.getPortInstanceConfiguration_I2C_OwnI2cAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Other I2c Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS = eINSTANCE.getPortInstanceConfiguration_I2C_OtherI2cAddress();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.ECUConfigurationImpl <em>ECU Configuration</em>}' class.

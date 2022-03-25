@@ -9,7 +9,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.psm.muml_container.Muml_containerPackage;
+import org.muml.psm.muml_container.PortInstanceConfiguration_I2C;
 
 /**
  * This is the item provider adapter for a {@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C} object.
@@ -39,8 +44,54 @@ public class PortInstanceConfiguration_I2CItemProvider extends PortInstanceConfi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnI2cAddressPropertyDescriptor(object);
+			addOtherI2cAddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Own I2c Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnI2cAddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstanceConfiguration_I2C_ownI2cAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstanceConfiguration_I2C_ownI2cAddress_feature", "_UI_PortInstanceConfiguration_I2C_type"),
+				 Muml_containerPackage.Literals.PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Other I2c Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOtherI2cAddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstanceConfiguration_I2C_otherI2cAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstanceConfiguration_I2C_otherI2cAddress_feature", "_UI_PortInstanceConfiguration_I2C_type"),
+				 Muml_containerPackage.Literals.PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -62,7 +113,8 @@ public class PortInstanceConfiguration_I2CItemProvider extends PortInstanceConfi
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PortInstanceConfiguration_I2C_type");
+		PortInstanceConfiguration_I2C portInstanceConfiguration_I2C = (PortInstanceConfiguration_I2C)object;
+		return getString("_UI_PortInstanceConfiguration_I2C_type") + " " + portInstanceConfiguration_I2C.getOwnI2cAddress();
 	}
 	
 
@@ -76,6 +128,13 @@ public class PortInstanceConfiguration_I2CItemProvider extends PortInstanceConfi
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PortInstanceConfiguration_I2C.class)) {
+			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS:
+			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -12,6 +12,7 @@ import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
 
 import org.muml.pim.provider.MumlEditPlugin;
+import org.muml.pm.hardware.provider.HardwareEditPlugin;
 import org.muml.pm.software.provider.SoftwareEditPlugin;
 
 import org.muml.psm.provider.PsmEditPlugin;
@@ -52,7 +53,7 @@ public final class Muml_containerEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     ActionlanguageEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
-		     org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE,
+		     HardwareEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		     OpenDDSEditPlugin.INSTANCE,
 		     PsmEditPlugin.INSTANCE,

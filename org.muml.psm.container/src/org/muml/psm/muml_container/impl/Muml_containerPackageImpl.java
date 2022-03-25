@@ -404,6 +404,24 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPortInstanceConfiguration_I2C_OwnI2cAddress() {
+		return (EAttribute)portInstanceConfiguration_I2CEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortInstanceConfiguration_I2C_OtherI2cAddress() {
+		return (EAttribute)portInstanceConfiguration_I2CEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getECUConfiguration() {
 		return ecuConfigurationEClass;
 	}
@@ -527,6 +545,8 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		portInstanceConfiguration_MQTTEClass = createEClass(PORT_INSTANCE_CONFIGURATION_MQTT);
 
 		portInstanceConfiguration_I2CEClass = createEClass(PORT_INSTANCE_CONFIGURATION_I2C);
+		createEAttribute(portInstanceConfiguration_I2CEClass, PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS);
+		createEAttribute(portInstanceConfiguration_I2CEClass, PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS);
 
 		ecuConfigurationEClass = createEClass(ECU_CONFIGURATION);
 		createEReference(ecuConfigurationEClass, ECU_CONFIGURATION__STRUCTURED_RESOURCE_INSTANCE);
@@ -614,6 +634,8 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		initEClass(portInstanceConfiguration_MQTTEClass, PortInstanceConfiguration_MQTT.class, "PortInstanceConfiguration_MQTT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(portInstanceConfiguration_I2CEClass, PortInstanceConfiguration_I2C.class, "PortInstanceConfiguration_I2C", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPortInstanceConfiguration_I2C_OwnI2cAddress(), ecorePackage.getEInt(), "ownI2cAddress", null, 0, 1, PortInstanceConfiguration_I2C.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortInstanceConfiguration_I2C_OtherI2cAddress(), ecorePackage.getEInt(), "otherI2cAddress", null, 0, 1, PortInstanceConfiguration_I2C.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ecuConfigurationEClass, ECUConfiguration.class, "ECUConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getECUConfiguration_StructuredResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "structuredResourceInstance", null, 0, 1, ECUConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

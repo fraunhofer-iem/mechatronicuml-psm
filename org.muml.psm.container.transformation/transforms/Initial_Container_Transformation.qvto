@@ -36,6 +36,8 @@ property systemallocation:SystemAllocation;
 
 configuration property selectedMiddleware:String;
 
+intermediate property StructuredResourceInstance::i2cAddress:Integer;
+
 
 main() {
 	var startTime : Integer;
@@ -47,6 +49,17 @@ main() {
 	
 	selectedMiddleware := "selectedMiddleware".getConfigProperty();
 	logToConsole(selectedMiddleware);
+	
+	var nextI2cAddress : Integer = 1;
+//	systemallocation.hpic.resources->forEach(resource | resource.oclIsKindOf(StructuredResourceInstance)){
+//		resource.oclAsType(StructuredResourceInstance).i2cAddress := nextI2cAddress;
+//		nextI2cAddress := nextI2cAddress + 1;
+//	};
+	systemallocation.allocations.resourceInstance->forEach(resource | resource.oclIsKindOf(StructuredResourceInstance)){
+		logToConsole("Found Strucutured Resource Instance!!!");
+		resource.oclAsType(StructuredResourceInstance).i2cAddress := nextI2cAddress;
+		nextI2cAddress := nextI2cAddress + 1;
+	};
 	
 	startTime := getCurrentTime();
 	systemallocation.map mapSystemAllocation();
@@ -116,9 +129,12 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 		var targetPortInstance : PortInstance := connectedPortInstances->any(true);
 		//get the target ECU
 		var targetECU: StructuredResourceInstance:= targetPortInstance.componentInstance.getAllocatedECU(systemallocation);
-		//check if the connected PortInstances are hosted on the same ECU if(ownECU=targetECU) then{
-		if(false) then{
+		//check if the connected PortInstances are hosted on the same ECU 
+			
+		if(ownECU=targetECU) then{
+		//if(false) then{
 			//create a Local Connector;
+			logToConsole("Same Location - local allocation");
 			portInstanceConfig :=  object PortInstanceConfiguration_Local {
 				portInstance:=self;
 				hwportInstance:=null;
@@ -131,6 +147,7 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 		}else {
 			// ownECU and targetECU are different
 			log("distributed allocation");
+			logToConsole("Distributed Allocation!");
 			var hwport: HWPortInstance := getNetworkInterface(ownECU, targetECU, systemallocation.getRootHPIC());
 			switch{ // selected MW switch
 				case (selectedMiddleware.equalsIgnoreCase("DDS_CONFIG")){
@@ -168,6 +185,8 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 						portInstanceConfig := object PortInstanceConfiguration_I2C {
 							portInstance:=self;
 							hwportInstance:=hwport;
+							ownI2cAddress:=ownECU.i2cAddress;
+							otherI2cAddress:=targetECU.i2cAddress;
 						};
 					} endif endif; //double endif needed due to else if
 				}
