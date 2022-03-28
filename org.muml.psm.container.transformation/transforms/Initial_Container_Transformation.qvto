@@ -36,6 +36,7 @@ property systemallocation:SystemAllocation;
 
 configuration property selectedMiddleware:String;
 
+// Each ECU nees one I2C address that all its ports make use of.
 intermediate property StructuredResourceInstance::i2cAddress:Integer;
 
 
@@ -50,16 +51,14 @@ main() {
 	selectedMiddleware := "selectedMiddleware".getConfigProperty();
 	logToConsole(selectedMiddleware);
 	
-	var nextI2cAddress : Integer = 1;
-//	systemallocation.hpic.resources->forEach(resource | resource.oclIsKindOf(StructuredResourceInstance)){
-//		resource.oclAsType(StructuredResourceInstance).i2cAddress := nextI2cAddress;
-//		nextI2cAddress := nextI2cAddress + 1;
-//	};
-	systemallocation.allocations.resourceInstance->forEach(resource | resource.oclIsKindOf(StructuredResourceInstance)){
-		logToConsole("Found Strucutured Resource Instance!!!");
-		resource.oclAsType(StructuredResourceInstance).i2cAddress := nextI2cAddress;
-		nextI2cAddress := nextI2cAddress + 1;
-	};
+	if (selectedMiddleware.equalsIgnoreCase("MQTT_I2C_CONFIG")){
+		// for I2C, every ECU needs an address that all its I2C ports can make use of
+		var nextI2cAddress : Integer = 1;
+		systemallocation.allocations.resourceInstance->forEach(resource | resource.oclIsKindOf(StructuredResourceInstance)){
+			resource.oclAsType(StructuredResourceInstance).i2cAddress := nextI2cAddress;
+			nextI2cAddress := nextI2cAddress + 1;
+		};
+	}endif;
 	
 	startTime := getCurrentTime();
 	systemallocation.map mapSystemAllocation();
@@ -185,6 +184,7 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 						portInstanceConfig := object PortInstanceConfiguration_I2C {
 							portInstance:=self;
 							hwportInstance:=hwport;
+							// each I2C port uses the I2C address of its allocated ECU
 							ownI2cAddress:=ownECU.i2cAddress;
 							otherI2cAddress:=targetECU.i2cAddress;
 						};
