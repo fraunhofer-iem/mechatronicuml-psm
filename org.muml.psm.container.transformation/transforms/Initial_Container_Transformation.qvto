@@ -34,10 +34,19 @@ intermediate property PortInstance::partnerConfig:PortInstanceConfiguration;
 
 property systemallocation:SystemAllocation;
 
-configuration property selectedMiddleware:String;
+// A global variable to store the selection from the Eclipse UI wizard
+property selectedMiddleware:String;
 
 // Each ECU nees one I2C address that all its ports make use of.
 intermediate property StructuredResourceInstance::i2cAddress:Integer;
+
+// The properties for MQTT - could also be integrated into the UI wizard in the future
+property mqttServerAddress:String="192.168.0.100";
+property mqttServerPort:Integer=1883;
+property wifiSsid:String="Section Control";
+property wifiPass:String="********";
+// (At the moment, we assume that all ECUs have only one WiFi module and all use the same connection properties.
+// This could be extended in the future.)
 
 
 main() {
@@ -129,7 +138,6 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 		//get the target ECU
 		var targetECU: StructuredResourceInstance:= targetPortInstance.componentInstance.getAllocatedECU(systemallocation);
 		//check if the connected PortInstances are hosted on the same ECU 
-			
 		if(ownECU=targetECU) then{
 		//if(false) then{
 			//create a Local Connector;
@@ -178,6 +186,15 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 						portInstanceConfig := object PortInstanceConfiguration_MQTT {
 							portInstance:=self;
 							hwportInstance:=hwport;
+							//each MQTT port uses the global configuration for WiFi and the MQTT server
+							WiFi_ssid:=wifiSsid;
+							WiFi_pass:=wifiPass;
+							MQTT_serverAddress:=mqttServerAddress;
+							MQTT_serverPort:=mqttServerPort;
+							//each MQTT port publishes to "their own" topic...
+							publishingTopic:=ownECU.name.toString()+"/"+self.componentInstance.name.toString()+"/"+self.name.toString()+"/";
+							//...and subscribes (in 1:1 mode) to their connected port's topic
+							subscriptionTopic:=targetECU.name.toString()+"/"+targetPortInstance.componentInstance.name.toString()+"/"+targetPortInstance.name.toString()+"/";
 						};
 					} else if hwport.isI2cApplicable() then { //create the I2C Port Configuration
 						logToConsole("Create I2C PortInstance");

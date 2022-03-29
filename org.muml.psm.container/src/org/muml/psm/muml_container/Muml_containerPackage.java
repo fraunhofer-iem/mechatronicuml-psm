@@ -561,13 +561,67 @@ public interface Muml_containerPackage extends EPackage {
 	int PORT_INSTANCE_CONFIGURATION_MQTT__HWPORT_INSTANCE = PORT_INSTANCE_CONFIGURATION__HWPORT_INSTANCE;
 
 	/**
+	 * The feature id for the '<em><b>Wi Fi ssid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_SSID = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Wi Fi pass</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_PASS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MQTT server Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_ADDRESS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>MQTT server Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_PORT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Publishing Topic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__PUBLISHING_TOPIC = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Subscription Topic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__SUBSCRIPTION_TOPIC = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Port Instance Configuration MQTT</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_CONFIGURATION_MQTT_FEATURE_COUNT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 0;
+	int PORT_INSTANCE_CONFIGURATION_MQTT_FEATURE_COUNT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Port Instance Configuration MQTT</em>' class.
@@ -1177,6 +1231,72 @@ public interface Muml_containerPackage extends EPackage {
 	EClass getPortInstanceConfiguration_MQTT();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_ssid <em>Wi Fi ssid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Wi Fi ssid</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_ssid()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_WiFi_ssid();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_pass <em>Wi Fi pass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Wi Fi pass</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_pass()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_WiFi_pass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverAddress <em>MQTT server Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>MQTT server Address</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverAddress()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_MQTT_serverAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverPort <em>MQTT server Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>MQTT server Port</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverPort()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_MQTT_serverPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getPublishingTopic <em>Publishing Topic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Publishing Topic</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getPublishingTopic()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_PublishingTopic();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getSubscriptionTopic <em>Subscription Topic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subscription Topic</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getSubscriptionTopic()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_SubscriptionTopic();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C <em>Port Instance Configuration I2C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1495,6 +1615,54 @@ public interface Muml_containerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PORT_INSTANCE_CONFIGURATION_MQTT = eINSTANCE.getPortInstanceConfiguration_MQTT();
+
+		/**
+		 * The meta object literal for the '<em><b>Wi Fi ssid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_SSID = eINSTANCE.getPortInstanceConfiguration_MQTT_WiFi_ssid();
+
+		/**
+		 * The meta object literal for the '<em><b>Wi Fi pass</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_PASS = eINSTANCE.getPortInstanceConfiguration_MQTT_WiFi_pass();
+
+		/**
+		 * The meta object literal for the '<em><b>MQTT server Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_ADDRESS = eINSTANCE.getPortInstanceConfiguration_MQTT_MQTT_serverAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>MQTT server Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_PORT = eINSTANCE.getPortInstanceConfiguration_MQTT_MQTT_serverPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Publishing Topic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__PUBLISHING_TOPIC = eINSTANCE.getPortInstanceConfiguration_MQTT_PublishingTopic();
+
+		/**
+		 * The meta object literal for the '<em><b>Subscription Topic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__SUBSCRIPTION_TOPIC = eINSTANCE.getPortInstanceConfiguration_MQTT_SubscriptionTopic();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.PortInstanceConfiguration_I2CImpl <em>Port Instance Configuration I2C</em>}' class.

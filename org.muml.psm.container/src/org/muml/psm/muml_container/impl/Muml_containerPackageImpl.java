@@ -395,6 +395,60 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPortInstanceConfiguration_MQTT_WiFi_ssid() {
+		return (EAttribute)portInstanceConfiguration_MQTTEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortInstanceConfiguration_MQTT_WiFi_pass() {
+		return (EAttribute)portInstanceConfiguration_MQTTEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortInstanceConfiguration_MQTT_MQTT_serverAddress() {
+		return (EAttribute)portInstanceConfiguration_MQTTEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortInstanceConfiguration_MQTT_MQTT_serverPort() {
+		return (EAttribute)portInstanceConfiguration_MQTTEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortInstanceConfiguration_MQTT_PublishingTopic() {
+		return (EAttribute)portInstanceConfiguration_MQTTEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortInstanceConfiguration_MQTT_SubscriptionTopic() {
+		return (EAttribute)portInstanceConfiguration_MQTTEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPortInstanceConfiguration_I2C() {
 		return portInstanceConfiguration_I2CEClass;
 	}
@@ -543,6 +597,12 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		createEReference(portInstanceConfiguration_DDSEClass, PORT_INSTANCE_CONFIGURATION_DDS__DOMAIN_PARTICIPANT);
 
 		portInstanceConfiguration_MQTTEClass = createEClass(PORT_INSTANCE_CONFIGURATION_MQTT);
+		createEAttribute(portInstanceConfiguration_MQTTEClass, PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_SSID);
+		createEAttribute(portInstanceConfiguration_MQTTEClass, PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_PASS);
+		createEAttribute(portInstanceConfiguration_MQTTEClass, PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_ADDRESS);
+		createEAttribute(portInstanceConfiguration_MQTTEClass, PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_PORT);
+		createEAttribute(portInstanceConfiguration_MQTTEClass, PORT_INSTANCE_CONFIGURATION_MQTT__PUBLISHING_TOPIC);
+		createEAttribute(portInstanceConfiguration_MQTTEClass, PORT_INSTANCE_CONFIGURATION_MQTT__SUBSCRIPTION_TOPIC);
 
 		portInstanceConfiguration_I2CEClass = createEClass(PORT_INSTANCE_CONFIGURATION_I2C);
 		createEAttribute(portInstanceConfiguration_I2CEClass, PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS);
@@ -632,6 +692,12 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		initEReference(getPortInstanceConfiguration_DDS_DomainParticipant(), theDCPSPackage.getDomainParticipant(), null, "domainParticipant", null, 0, 1, PortInstanceConfiguration_DDS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portInstanceConfiguration_MQTTEClass, PortInstanceConfiguration_MQTT.class, "PortInstanceConfiguration_MQTT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPortInstanceConfiguration_MQTT_WiFi_ssid(), ecorePackage.getEString(), "WiFi_ssid", null, 0, 1, PortInstanceConfiguration_MQTT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortInstanceConfiguration_MQTT_WiFi_pass(), ecorePackage.getEString(), "WiFi_pass", null, 0, 1, PortInstanceConfiguration_MQTT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortInstanceConfiguration_MQTT_MQTT_serverAddress(), ecorePackage.getEString(), "MQTT_serverAddress", null, 0, 1, PortInstanceConfiguration_MQTT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortInstanceConfiguration_MQTT_MQTT_serverPort(), ecorePackage.getEInt(), "MQTT_serverPort", null, 0, 1, PortInstanceConfiguration_MQTT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortInstanceConfiguration_MQTT_PublishingTopic(), ecorePackage.getEString(), "publishingTopic", null, 0, 1, PortInstanceConfiguration_MQTT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortInstanceConfiguration_MQTT_SubscriptionTopic(), ecorePackage.getEString(), "subscriptionTopic", null, 0, 1, PortInstanceConfiguration_MQTT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portInstanceConfiguration_I2CEClass, PortInstanceConfiguration_I2C.class, "PortInstanceConfiguration_I2C", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortInstanceConfiguration_I2C_OwnI2cAddress(), ecorePackage.getEInt(), "ownI2cAddress", null, 0, 1, PortInstanceConfiguration_I2C.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

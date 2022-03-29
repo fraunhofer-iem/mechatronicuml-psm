@@ -40,7 +40,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" eType="ecore:EClass ../../org.opendds.modeling.model/model/DCPS.ecore#//Subscriber"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="domainParticipant" eType="ecore:EClass ../../org.opendds.modeling.model/model/DCPS.ecore#//DomainParticipant"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfiguration_MQTT" eSuperTypes="#//PortInstanceConfiguration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfiguration_MQTT" eSuperTypes="#//PortInstanceConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WiFi_ssid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WiFi_pass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MQTT_serverAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MQTT_serverPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishingTopic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscriptionTopic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfiguration_I2C" eSuperTypes="#//PortInstanceConfiguration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ownI2cAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherI2cAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
