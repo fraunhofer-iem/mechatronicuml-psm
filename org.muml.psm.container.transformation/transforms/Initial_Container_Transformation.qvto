@@ -155,6 +155,8 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 			// ownECU and targetECU are different
 			log("distributed allocation");
 			logToConsole("Distributed Allocation!");
+			//Attention! The blackbox function getNetworkInterface REQUIRES that the communication resource is tagges as "IsNetworkingProtocol"
+			//So make sure to also tick the box for I2C -> otherwhise, this function will return NULL
 			var hwport: HWPortInstance := getNetworkInterface(ownECU, targetECU, systemallocation.getRootHPIC());
 			switch{ // selected MW switch
 				case (selectedMiddleware.equalsIgnoreCase("DDS_CONFIG")){
