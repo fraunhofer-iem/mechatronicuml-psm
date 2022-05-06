@@ -31,7 +31,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport,
- org.muml.core.tests,
- org.muml.implicitcopy.qvto.library,
- org.muml.psm.edit
+ org.muml.psm.edit,
+ org.muml.modelcopy.qvto.library;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

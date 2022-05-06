@@ -164,6 +164,52 @@ public class Muml_containerItemProviderAdapterFactory extends Muml_containerAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortInstanceConfiguration_MQTTItemProvider portInstanceConfiguration_MQTTItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortInstanceConfiguration_MQTTAdapter() {
+		if (portInstanceConfiguration_MQTTItemProvider == null) {
+			portInstanceConfiguration_MQTTItemProvider = new PortInstanceConfiguration_MQTTItemProvider(this);
+		}
+
+		return portInstanceConfiguration_MQTTItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortInstanceConfiguration_I2CItemProvider portInstanceConfiguration_I2CItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortInstanceConfiguration_I2CAdapter() {
+		if (portInstanceConfiguration_I2CItemProvider == null) {
+			portInstanceConfiguration_I2CItemProvider = new PortInstanceConfiguration_I2CItemProvider(this);
+		}
+
+		return portInstanceConfiguration_I2CItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.muml.psm.muml_container.ECUConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,6 +381,8 @@ public class Muml_containerItemProviderAdapterFactory extends Muml_containerAdap
 		if (containerComponentInstanceConfigurationItemProvider != null) containerComponentInstanceConfigurationItemProvider.dispose();
 		if (portInstanceConfiguration_LocalItemProvider != null) portInstanceConfiguration_LocalItemProvider.dispose();
 		if (portInstanceConfiguration_DDSItemProvider != null) portInstanceConfiguration_DDSItemProvider.dispose();
+		if (portInstanceConfiguration_MQTTItemProvider != null) portInstanceConfiguration_MQTTItemProvider.dispose();
+		if (portInstanceConfiguration_I2CItemProvider != null) portInstanceConfiguration_I2CItemProvider.dispose();
 		if (ecuConfigurationItemProvider != null) ecuConfigurationItemProvider.dispose();
 		if (multiPortInstanceConfigurationItemProvider != null) multiPortInstanceConfigurationItemProvider.dispose();
 		if (deploymentConfigurationItemProvider != null) deploymentConfigurationItemProvider.dispose();

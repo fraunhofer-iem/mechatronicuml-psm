@@ -103,6 +103,20 @@ public class Muml_containerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_MQTT: {
+				PortInstanceConfiguration_MQTT portInstanceConfiguration_MQTT = (PortInstanceConfiguration_MQTT)theEObject;
+				T result = casePortInstanceConfiguration_MQTT(portInstanceConfiguration_MQTT);
+				if (result == null) result = casePortInstanceConfiguration(portInstanceConfiguration_MQTT);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_I2C: {
+				PortInstanceConfiguration_I2C portInstanceConfiguration_I2C = (PortInstanceConfiguration_I2C)theEObject;
+				T result = casePortInstanceConfiguration_I2C(portInstanceConfiguration_I2C);
+				if (result == null) result = casePortInstanceConfiguration(portInstanceConfiguration_I2C);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case Muml_containerPackage.ECU_CONFIGURATION: {
 				ECUConfiguration ecuConfiguration = (ECUConfiguration)theEObject;
 				T result = caseECUConfiguration(ecuConfiguration);
@@ -200,6 +214,36 @@ public class Muml_containerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePortInstanceConfiguration_DDS(PortInstanceConfiguration_DDS object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Instance Configuration MQTT</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Instance Configuration MQTT</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortInstanceConfiguration_MQTT(PortInstanceConfiguration_MQTT object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Instance Configuration I2C</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Instance Configuration I2C</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortInstanceConfiguration_I2C(PortInstanceConfiguration_I2C object) {
 		return null;
 	}
 

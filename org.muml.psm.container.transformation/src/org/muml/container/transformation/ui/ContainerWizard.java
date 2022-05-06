@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.muml.container.transformation.job.ContainerGenerationJob;
 import org.muml.container.transformation.job.DDSContainerGenerationJob;
+import org.muml.container.transformation.job.MiddlewareOption;
 import org.muml.core.export.operation.AbstractFujabaExportOperation;
 import org.muml.core.export.operation.IFujabaExportOperation;
 import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
@@ -24,9 +25,11 @@ import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.muml_container.DeploymentConfiguration;
 
 public class ContainerWizard extends AbstractFujabaExportWizard {
+	
 	private AbstractFujabaExportSourcePage sourcePage;
-
+	private MiddlewareOptionsPage middlewareOptionsPage;
 	private AbstractFujabaExportTargetPage targetPage;
+	
 
 	@Override
 	public String wizardGetId() {
@@ -56,6 +59,9 @@ public class ContainerWizard extends AbstractFujabaExportWizard {
 
 		};
 		addPage(sourcePage);
+		
+		middlewareOptionsPage = new MiddlewareOptionsPage();
+		addPage(middlewareOptionsPage);
 
 		targetPage = new AbstractFujabaExportTargetPage("target", toolkit) {
 
@@ -80,6 +86,8 @@ public class ContainerWizard extends AbstractFujabaExportWizard {
 		final URI sourceURI = sourcePage.getURI();
 
 		final URI destinationURI = targetPage.getDestinationURI();
+		
+		final MiddlewareOption selectedMiddleware = middlewareOptionsPage.getSelectedMiddleware();
 
 		return new AbstractFujabaExportOperation() {
 			@Override
@@ -88,7 +96,7 @@ public class ContainerWizard extends AbstractFujabaExportWizard {
 				final SystemAllocation systemAllocation = (SystemAllocation) sourceElements[0];
 				AdapterFactoryEditingDomain.getEditingDomainFor(systemAllocation);
 
-				Job containerJob = new ContainerGenerationJob(systemAllocation, destinationURI, editingDomain);
+				Job containerJob = new ContainerGenerationJob(systemAllocation, destinationURI, editingDomain, selectedMiddleware);
 				containerJob.schedule();
 
 				try {
@@ -98,13 +106,15 @@ public class ContainerWizard extends AbstractFujabaExportWizard {
 					Resource res = resSet.getResource(newContinaerFile, true);
 
 					final DeploymentConfiguration systemConfig = (DeploymentConfiguration) res.getContents().get(0);
-
-					EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(systemConfig);
-					if (editingDomain == null) {
-						editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+					
+					if (selectedMiddleware == MiddlewareOption.DDS_CONFIG){ // Only call the ddsJob if DDS was selected
+						EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(systemConfig);
+						if (editingDomain == null) {
+							editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+						}
+						Job ddsJob = new DDSContainerGenerationJob(systemConfig, destinationURI, editingDomain);
+						ddsJob.schedule();
 					}
-					Job ddsJob = new DDSContainerGenerationJob(systemConfig, destinationURI, editingDomain);
-					ddsJob.schedule();
 
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

@@ -133,6 +133,141 @@ public interface Muml_containerPackage extends EPackage {
 	int COMPONENT_CONTAINER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_CONTAINER___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -398,6 +533,170 @@ public interface Muml_containerPackage extends EPackage {
 	int PORT_INSTANCE_CONFIGURATION_DDS_OPERATION_COUNT = PORT_INSTANCE_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.muml.psm.muml_container.impl.PortInstanceConfiguration_MQTTImpl <em>Port Instance Configuration MQTT</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.psm.muml_container.impl.PortInstanceConfiguration_MQTTImpl
+	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Port Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__PORT_INSTANCE = PORT_INSTANCE_CONFIGURATION__PORT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Hwport Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__HWPORT_INSTANCE = PORT_INSTANCE_CONFIGURATION__HWPORT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Wi Fi ssid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_SSID = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Wi Fi pass</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_PASS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MQTT server Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_ADDRESS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>MQTT server Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_PORT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Publishing Topic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__PUBLISHING_TOPIC = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Subscription Topic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT__SUBSCRIPTION_TOPIC = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Port Instance Configuration MQTT</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT_FEATURE_COUNT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Port Instance Configuration MQTT</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_MQTT_OPERATION_COUNT = PORT_INSTANCE_CONFIGURATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.muml.psm.muml_container.impl.PortInstanceConfiguration_I2CImpl <em>Port Instance Configuration I2C</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.psm.muml_container.impl.PortInstanceConfiguration_I2CImpl
+	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getPortInstanceConfiguration_I2C()
+	 * @generated
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C = 6;
+
+	/**
+	 * The feature id for the '<em><b>Port Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C__PORT_INSTANCE = PORT_INSTANCE_CONFIGURATION__PORT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Hwport Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C__HWPORT_INSTANCE = PORT_INSTANCE_CONFIGURATION__HWPORT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Own I2c Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Other I2c Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Port Instance Configuration I2C</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C_FEATURE_COUNT = PORT_INSTANCE_CONFIGURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Port Instance Configuration I2C</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_CONFIGURATION_I2C_OPERATION_COUNT = PORT_INSTANCE_CONFIGURATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.muml.psm.muml_container.impl.ECUConfigurationImpl <em>ECU Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -405,7 +704,7 @@ public interface Muml_containerPackage extends EPackage {
 	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getECUConfiguration()
 	 * @generated
 	 */
-	int ECU_CONFIGURATION = 5;
+	int ECU_CONFIGURATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -453,6 +752,141 @@ public interface Muml_containerPackage extends EPackage {
 	int ECU_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ECU_CONFIGURATION___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,7 +912,7 @@ public interface Muml_containerPackage extends EPackage {
 	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getMultiPortInstanceConfiguration()
 	 * @generated
 	 */
-	int MULTI_PORT_INSTANCE_CONFIGURATION = 6;
+	int MULTI_PORT_INSTANCE_CONFIGURATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Port Instance</b></em>' reference.
@@ -533,7 +967,7 @@ public interface Muml_containerPackage extends EPackage {
 	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getDeploymentConfiguration()
 	 * @generated
 	 */
-	int DEPLOYMENT_CONFIGURATION = 7;
+	int DEPLOYMENT_CONFIGURATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>System Allocation</b></em>' reference.
@@ -785,6 +1219,114 @@ public interface Muml_containerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPortInstanceConfiguration_DDS_DomainParticipant();
+
+	/**
+	 * Returns the meta object for class '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT <em>Port Instance Configuration MQTT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Instance Configuration MQTT</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT
+	 * @generated
+	 */
+	EClass getPortInstanceConfiguration_MQTT();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_ssid <em>Wi Fi ssid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Wi Fi ssid</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_ssid()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_WiFi_ssid();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_pass <em>Wi Fi pass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Wi Fi pass</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getWiFi_pass()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_WiFi_pass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverAddress <em>MQTT server Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>MQTT server Address</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverAddress()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_MQTT_serverAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverPort <em>MQTT server Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>MQTT server Port</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getMQTT_serverPort()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_MQTT_serverPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getPublishingTopic <em>Publishing Topic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Publishing Topic</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getPublishingTopic()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_PublishingTopic();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getSubscriptionTopic <em>Subscription Topic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subscription Topic</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_MQTT#getSubscriptionTopic()
+	 * @see #getPortInstanceConfiguration_MQTT()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_MQTT_SubscriptionTopic();
+
+	/**
+	 * Returns the meta object for class '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C <em>Port Instance Configuration I2C</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Instance Configuration I2C</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_I2C
+	 * @generated
+	 */
+	EClass getPortInstanceConfiguration_I2C();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOwnI2cAddress <em>Own I2c Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Own I2c Address</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOwnI2cAddress()
+	 * @see #getPortInstanceConfiguration_I2C()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_I2C_OwnI2cAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOtherI2cAddress <em>Other I2c Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Other I2c Address</em>'.
+	 * @see org.muml.psm.muml_container.PortInstanceConfiguration_I2C#getOtherI2cAddress()
+	 * @see #getPortInstanceConfiguration_I2C()
+	 * @generated
+	 */
+	EAttribute getPortInstanceConfiguration_I2C_OtherI2cAddress();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.psm.muml_container.ECUConfiguration <em>ECU Configuration</em>}'.
@@ -1063,6 +1605,90 @@ public interface Muml_containerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_INSTANCE_CONFIGURATION_DDS__DOMAIN_PARTICIPANT = eINSTANCE.getPortInstanceConfiguration_DDS_DomainParticipant();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.PortInstanceConfiguration_MQTTImpl <em>Port Instance Configuration MQTT</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.psm.muml_container.impl.PortInstanceConfiguration_MQTTImpl
+		 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getPortInstanceConfiguration_MQTT()
+		 * @generated
+		 */
+		EClass PORT_INSTANCE_CONFIGURATION_MQTT = eINSTANCE.getPortInstanceConfiguration_MQTT();
+
+		/**
+		 * The meta object literal for the '<em><b>Wi Fi ssid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_SSID = eINSTANCE.getPortInstanceConfiguration_MQTT_WiFi_ssid();
+
+		/**
+		 * The meta object literal for the '<em><b>Wi Fi pass</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__WI_FI_PASS = eINSTANCE.getPortInstanceConfiguration_MQTT_WiFi_pass();
+
+		/**
+		 * The meta object literal for the '<em><b>MQTT server Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_ADDRESS = eINSTANCE.getPortInstanceConfiguration_MQTT_MQTT_serverAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>MQTT server Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__MQTT_SERVER_PORT = eINSTANCE.getPortInstanceConfiguration_MQTT_MQTT_serverPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Publishing Topic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__PUBLISHING_TOPIC = eINSTANCE.getPortInstanceConfiguration_MQTT_PublishingTopic();
+
+		/**
+		 * The meta object literal for the '<em><b>Subscription Topic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_MQTT__SUBSCRIPTION_TOPIC = eINSTANCE.getPortInstanceConfiguration_MQTT_SubscriptionTopic();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.PortInstanceConfiguration_I2CImpl <em>Port Instance Configuration I2C</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.psm.muml_container.impl.PortInstanceConfiguration_I2CImpl
+		 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getPortInstanceConfiguration_I2C()
+		 * @generated
+		 */
+		EClass PORT_INSTANCE_CONFIGURATION_I2C = eINSTANCE.getPortInstanceConfiguration_I2C();
+
+		/**
+		 * The meta object literal for the '<em><b>Own I2c Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_I2C__OWN_I2C_ADDRESS = eINSTANCE.getPortInstanceConfiguration_I2C_OwnI2cAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Other I2c Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_INSTANCE_CONFIGURATION_I2C__OTHER_I2C_ADDRESS = eINSTANCE.getPortInstanceConfiguration_I2C_OtherI2cAddress();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.ECUConfigurationImpl <em>ECU Configuration</em>}' class.

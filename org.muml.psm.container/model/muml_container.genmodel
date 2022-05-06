@@ -33,6 +33,18 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml_container.ecore#//PortInstanceConfiguration_DDS/subscriber"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml_container.ecore#//PortInstanceConfiguration_DDS/domainParticipant"/>
     </genClasses>
+    <genClasses ecoreClass="muml_container.ecore#//PortInstanceConfiguration_MQTT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_MQTT/WiFi_ssid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_MQTT/WiFi_pass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_MQTT/MQTT_serverAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_MQTT/MQTT_serverPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_MQTT/publishingTopic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_MQTT/subscriptionTopic"/>
+    </genClasses>
+    <genClasses ecoreClass="muml_container.ecore#//PortInstanceConfiguration_I2C">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_I2C/ownI2cAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml_container.ecore#//PortInstanceConfiguration_I2C/otherI2cAddress"/>
+    </genClasses>
     <genClasses ecoreClass="muml_container.ecore#//ECUConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml_container.ecore#//ECUConfiguration/structuredResourceInstance"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml_container.ecore#//ECUConfiguration/componentContainers"/>

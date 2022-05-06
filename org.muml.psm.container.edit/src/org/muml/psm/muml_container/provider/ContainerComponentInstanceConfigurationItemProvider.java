@@ -185,6 +185,16 @@ public class ContainerComponentInstanceConfigurationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(Muml_containerPackage.Literals.CONTAINER_COMPONENT_INSTANCE_CONFIGURATION__PORT_INSTANCE_CONFIGURATIONS,
+				 Muml_containerFactory.eINSTANCE.createPortInstanceConfiguration_MQTT()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Muml_containerPackage.Literals.CONTAINER_COMPONENT_INSTANCE_CONFIGURATION__PORT_INSTANCE_CONFIGURATIONS,
+				 Muml_containerFactory.eINSTANCE.createPortInstanceConfiguration_I2C()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Muml_containerPackage.Literals.CONTAINER_COMPONENT_INSTANCE_CONFIGURATION__PORT_INSTANCE_CONFIGURATIONS,
 				 Muml_containerFactory.eINSTANCE.createMultiPortInstanceConfiguration()));
 	}
 

@@ -1,7 +1,6 @@
 transformation Initial_Container_Transformation(in mumlModel:PSM, out containerModel:MumlContainer);
 import Naming_Library;
 import org.muml.container._library.DDSHelperBlackBox;
-	
 
 modeltype MumlPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype Typespackage uses pim::types('http://www.muml.org/pim/1.0.0');
@@ -35,6 +34,20 @@ intermediate property PortInstance::partnerConfig:PortInstanceConfiguration;
 
 property systemallocation:SystemAllocation;
 
+// A global variable to store the selection from the Eclipse UI wizard
+property selectedMiddleware:String;
+
+// Each ECU nees one I2C address that all its ports make use of.
+intermediate property StructuredResourceInstance::i2cAddress:Integer;
+
+// The properties for MQTT - could also be integrated into the UI wizard in the future
+property mqttServerAddress:String="192.168.0.100";
+property mqttServerPort:Integer=1883;
+property wifiSsid:String="Section Control";
+property wifiPass:String="********";
+// (At the moment, we assume that all ECUs have only one WiFi module and all use the same connection properties.
+// This could be extended in the future.)
+
 
 main() {
 	var startTime : Integer;
@@ -43,6 +56,19 @@ main() {
 	if(systemallocation=null) then{
 		systemallocation:=SystemAllocation.allInstances()->any(true);
 	}endif;
+	
+	selectedMiddleware := "selectedMiddleware".getConfigProperty();
+	logToConsole(selectedMiddleware);
+	
+	if (selectedMiddleware.equalsIgnoreCase("MQTT_I2C_CONFIG")){
+		// for I2C, every ECU needs an address that all its I2C ports can make use of
+		var nextI2cAddress : Integer = 1;
+		systemallocation.allocations.resourceInstance->forEach(resource | resource.oclIsKindOf(StructuredResourceInstance)){
+			resource.oclAsType(StructuredResourceInstance).i2cAddress := nextI2cAddress;
+			nextI2cAddress := nextI2cAddress + 1;
+		};
+	}endif;
+	
 	startTime := getCurrentTime();
 	systemallocation.map mapSystemAllocation();
 	endTime := getCurrentTime();
@@ -111,9 +137,11 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 		var targetPortInstance : PortInstance := connectedPortInstances->any(true);
 		//get the target ECU
 		var targetECU: StructuredResourceInstance:= targetPortInstance.componentInstance.getAllocatedECU(systemallocation);
-		//check if the connected PortInstances are hosted on the same ECU if(ownECU=targetECU) then{
-		if(false) then{
+		//check if the connected PortInstances are hosted on the same ECU 
+		if(ownECU=targetECU) then{
+		//if(false) then{
 			//create a Local Connector;
+			logToConsole("Same Location - local allocation");
 			portInstanceConfig :=  object PortInstanceConfiguration_Local {
 				portInstance:=self;
 				hwportInstance:=null;
@@ -123,34 +151,65 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 				ownID:= getHash(Set{self});
 				writersID:=getHash(Set{targetPortInstance});
 			};
-			return portInstanceConfig;
 		}else {
-			log("distributed allocation");
 			// ownECU and targetECU are different
+			log("distributed allocation");
+			logToConsole("Distributed Allocation!");
+			//Attention! The blackbox function getNetworkInterface REQUIRES that the communication resource is tagges as "IsNetworkingProtocol"
+			//So make sure to also tick the box for I2C -> otherwhise, this function will return NULL
 			var hwport: HWPortInstance := getNetworkInterface(ownECU, targetECU, systemallocation.getRootHPIC());
-			if(hwport.protocol.oclIsKindOf(LinkProtocol)) then{
-			
-				var protocolKind : LinkProtocolKind := hwport.protocol.oclAsType(LinkProtocol).linkProtocol;
-				
-				switch{
-					//case (protocolKind=LinkProtocolKind::ETHERNET){
-					case (true){
-						portInstanceConfig:= object PortInstanceConfiguration_DDS{
+			switch{ // selected MW switch
+				case (selectedMiddleware.equalsIgnoreCase("DDS_CONFIG")){
+					if(hwport.protocol.oclIsKindOf(LinkProtocol)) then{
+					
+						var protocolKind : LinkProtocolKind := hwport.protocol.oclAsType(LinkProtocol).linkProtocol;
+						
+						switch{
+							//case (protocolKind=LinkProtocolKind::ETHERNET){
+							case (true){
+								portInstanceConfig := object PortInstanceConfiguration_DDS {
+									portInstance:=self;
+									hwportInstance:=hwport;
+									partitionID:=getHash(Set{self,targetPortInstance});
+									log("created DDS Config");
+									};
+								}
+							else{
+								
+							}
+							
+						};
+						
+					}endif;
+				}
+				case (selectedMiddleware.equalsIgnoreCase("MQTT_I2C_CONFIG")){
+					if hwport.isMqttApplicable() then { //create the MQTT Port Configuration
+						logToConsole("Create MQTT PortInstance");
+						portInstanceConfig := object PortInstanceConfiguration_MQTT {
 							portInstance:=self;
 							hwportInstance:=hwport;
-							partitionID:=getHash(Set{self,targetPortInstance});
-							log("created DDS Config");
-							};
-						}
-					else{
-						
-					}
-					
-				};
-				
-			}endif;
-			
-			
+							//each MQTT port uses the global configuration for WiFi and the MQTT server
+							WiFi_ssid:=wifiSsid;
+							WiFi_pass:=wifiPass;
+							MQTT_serverAddress:=mqttServerAddress;
+							MQTT_serverPort:=mqttServerPort;
+							//each MQTT port publishes to "their own" topic...
+							publishingTopic:=ownECU.name.toString()+"/"+self.componentInstance.name.toString()+"/"+self.name.toString()+"/";
+							//...and subscribes (in 1:1 mode) to their connected port's topic
+							subscriptionTopic:=targetECU.name.toString()+"/"+targetPortInstance.componentInstance.name.toString()+"/"+targetPortInstance.name.toString()+"/";
+						};
+					} else if hwport.isI2cApplicable() then { //create the I2C Port Configuration
+						logToConsole("Create I2C PortInstance");
+						portInstanceConfig := object PortInstanceConfiguration_I2C {
+							portInstance:=self;
+							hwportInstance:=hwport;
+							// each I2C port uses the I2C address of its allocated ECU
+							ownI2cAddress:=ownECU.i2cAddress;
+							otherI2cAddress:=targetECU.i2cAddress;
+						};
+					} endif endif; //double endif needed due to else if
+				}
+			}
 			
 		}endif;
 		
@@ -159,5 +218,45 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 	}endif;
 	
 	return portInstanceConfig;
+}
+
+/**
+* Determines if mqtt can be used for communication via the given HWPortInstance.
+* MQTT is applicable iff there is an IP connection via Ethernet or WiFi.
+* returns true iff MQTT is applicable (see above)
+*/
+query HWPortInstance::isMqttApplicable():Boolean{
+	logToConsole("Protocol: " + self.protocol.toString());
+	if self.protocol.oclIsKindOf(LinkProtocol) then{
+		var protocolKind : LinkProtocolKind := self.protocol.oclAsType(LinkProtocol).linkProtocol;
+		logToConsole("ProtocolKind: " + protocolKind.toString());
+		if protocolKind.=(LinkProtocolKind::ETHERNET) or protocolKind.=(LinkProtocolKind::WIFI) then{
+			return true;
+		} else {
+			return false;
+		}endif;
+	} else {
+		return false;
+	}endif;
+}
+
+/**
+* Determines if I2C can be used for communication via the given HWPortInstance.
+* I2C is only applicable iff the port uses the I2C protocol.
+* returns true iff I2C is applicable (see above)
+*/
+query HWPortInstance::isI2cApplicable():Boolean{
+	logToConsole("Protocol: " + self.protocol.toString());
+	if self.protocol.oclIsKindOf(BusProtocol) then{
+		var protocolKind : BusProtocolKind := self.protocol.oclAsType(BusProtocol).busProtocol;
+		logToConsole("ProtocolKind: " + protocolKind.toString());
+		if protocolKind.=(BusProtocolKind::I2C) then{
+			return true;
+		} else {
+			return false;
+		}endif;
+	} else {
+		return false;
+	}endif;
 }
 

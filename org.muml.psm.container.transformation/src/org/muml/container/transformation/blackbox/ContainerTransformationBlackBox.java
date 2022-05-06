@@ -10,12 +10,22 @@ import java.util.Collections;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
+import org.eclipse.m2m.qvt.oml.blackbox.java.Operation.Kind;
+import org.eclipse.m2m.qvt.oml.util.IContext;
 import org.muml.pim.common.naming.MumlQualifiedNameProvider;
 import org.muml.pim.common.naming.QualifiedNameProvider;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HWPortInstance;
 import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
+
+/**
+ * QVTo BlackBox class with helper and utility functions for QVTo transformation scripts.
+ * Registered as org.muml.container._library.DDSHelperBlackBox for the QVTo extension point org.eclipse.m2m.qvt.oml.javaBlackboxUnits.
+ * 
+ * To use these functions, import the library into the QVTo script as follows: import org.muml.container._library.DDSHelperBlackBox;
+ */
 public class ContainerTransformationBlackBox {
 
 	
@@ -81,5 +91,36 @@ public class ContainerTransformationBlackBox {
 	public static HWPortInstance getNetworkInterface(StructuredResourceInstance startECU,
 			StructuredResourceInstance targetECU, HWPlatformInstanceConfiguration rootHWPlatformInstanceConfiguration) {
 		return Routing.getNetworkInterface(startECU, targetECU, rootHWPlatformInstanceConfiguration);
+	}
+	
+	/**
+	 * Gives access to the configuration properties that can be stored in the execution context of a QVTo transformation.
+	 * Intended use for properties with String-value only!
+	 * To be called from a QVTo script in order to access the desired configuration property.,
+	 * 
+	 * Usage in QVTo as follows: 'propertyName'.getConfigProperty();
+	 * 
+	 * @author David
+	 * 
+	 * @param context The execution context holding the properties
+	 * @param propertyName the name of the context property to access 
+	 * @return the value of the accessed context property as a String
+	 */
+	@Operation(contextual=true, withExecutionContext=true)
+	public String getConfigProperty(IContext context, String propertyName){
+		return context.getConfigProperty(propertyName).toString();
+	}
+	
+	/**
+	 * Simply prints a message to System.out - can be used for debugging from a QVTo script.
+	 * Usage in QVTo: logToConsole("message");
+	 * 
+	 * @author David
+	 * 
+	 * @param message the String message to be printed
+	 */
+	@Operation (kind=Kind.HELPER)
+	public void logToConsole(String message) {
+		System.out.println(message);
 	}
 }

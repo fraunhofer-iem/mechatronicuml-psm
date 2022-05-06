@@ -1,7 +1,6 @@
 package org.muml.container.transformation.job;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -21,13 +20,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ExecutionContext;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
-import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.StringBufferLog;
-import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.muml.container.transformation.ui.Activator;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
@@ -46,13 +42,16 @@ public class ContainerGenerationJob extends Job {
 
 
 	private IStatus loadStatus;
+	
+	private MiddlewareOption selectedMiddleware;
 
-	public ContainerGenerationJob(SystemAllocation allocation,  URI directoryPath, EditingDomain editingDomain) {
+	public ContainerGenerationJob(SystemAllocation allocation,  URI directoryPath, EditingDomain editingDomain, MiddlewareOption selectedMiddleware) {
 		super("Container Generation");
 		this.allocation = allocation;
 		this.destinationURI = directoryPath;
 		this.editingDomain=editingDomain;
 		this.createdFile = URI.createURI("");
+		this.selectedMiddleware = selectedMiddleware;
 	}
 
 
@@ -85,6 +84,7 @@ public class ContainerGenerationJob extends Job {
 			StringBufferLog log = new StringBufferLog();
 			
 			ExecutionContextImpl context = new ExecutionContextImpl();
+			context.setConfigProperty("selectedMiddleware", selectedMiddleware.toString());
 			context.setLog(log);
 			ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(transformationExecutor,
 					extentList,context);

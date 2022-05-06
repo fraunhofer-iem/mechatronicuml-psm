@@ -58,6 +58,24 @@ public interface Muml_containerFactory extends EFactory {
 	PortInstanceConfiguration_DDS createPortInstanceConfiguration_DDS();
 
 	/**
+	 * Returns a new object of class '<em>Port Instance Configuration MQTT</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Instance Configuration MQTT</em>'.
+	 * @generated
+	 */
+	PortInstanceConfiguration_MQTT createPortInstanceConfiguration_MQTT();
+
+	/**
+	 * Returns a new object of class '<em>Port Instance Configuration I2C</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Instance Configuration I2C</em>'.
+	 * @generated
+	 */
+	PortInstanceConfiguration_I2C createPortInstanceConfiguration_I2C();
+
+	/**
 	 * Returns a new object of class '<em>ECU Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
